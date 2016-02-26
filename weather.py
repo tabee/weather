@@ -1,7 +1,8 @@
 import requests
+import sys
 
+WEATHER_SERVICE_API_KEY = ""
 WEATHER_SERVICE_API_URL = "http://api.openweathermap.org/data/2.5/"
-WEATHER_SERVICE_API_KEY = "a06a5c8632cd9cacf412aa7a14658c28"
 MODE = 'metric'  # metric (Grad) for europe or imperial for Fahrenheit.
 
 
@@ -53,4 +54,6 @@ def main(city, country):
 
 
 if __name__ == '__main__':
+    WEATHER_SERVICE_API_KEY = sys.argv[1]
+
     main('Bern', 'CH')
