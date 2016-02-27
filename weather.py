@@ -82,16 +82,4 @@ class Weather():
 
 
 if __name__ == '__main__':
-    # add a logger
-    logger = logging.getLogger('weather_logger')
-    hdlr = logging.FileHandler('example.log')
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-    hdlr.setFormatter(formatter)
-    logger.addHandler(hdlr)
-    logger.setLevel(logging.INFO)
-
-
-
-    message = Weather('rubigen','ch')
-    #message = Weather(city=False,country=False)
-    logger.info(message)
+    pass
