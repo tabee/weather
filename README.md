@@ -1,3 +1,4 @@
-Als Parameter muss ein openweather api key übergeben werden.
-Weatherdata log a textfile.
-----------------------------------
+Weatherdata log in a textfile.
+------------------------------
+you need API key.
+so add the openweather api key in config.json
