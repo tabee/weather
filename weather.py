@@ -17,19 +17,27 @@ class Weather():
     temperature_description = False
     filename = False
 
-    def __init__(self):
+    def __init__(self, city, country):
         # read json_config_file file
         json_data = open(self.json_config_file).read()
         setting_data = json.loads(json_data)
         # set config vars
         self.weather_service_api_key = setting_data[1]['api_key']
-        self.city = setting_data[3]['city']
-        self.country = setting_data[3]['country_code']
         self.format = setting_data[3]['format']
         self.filename = setting_data[5]['log_file']
+        # set config from constructor, fallback to config.json
+        if city == False:
+            self.city = setting_data[3]['city']
+        else:
+            self.city = city
+        if country == False:
+            self.country = setting_data[3]['country_code']
+        else:
+            self.country = country
         # set weather_data
         self.temperature = self.set_temperature(self.city, self.country)
         self.temperature_description = self.set_temperature_description(self.city, self.country)
+
 
     def __str__(self):
         return self.city + ', ' + str(self.temperature) + ', ' + self.temperature_description
@@ -84,5 +92,6 @@ if __name__ == '__main__':
 
 
 
-    message = Weather()
+    message = Weather('rubigen','ch')
+    #message = Weather(city=False,country=False)
     logger.info(message)
