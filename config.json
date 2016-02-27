@@ -6,7 +6,8 @@
   "location",
   {
     "country_code": "ch",
-    "city": "Bern"
+    "city": "Worb",
+    "format": "metric"
   },
   "settings",
   {
